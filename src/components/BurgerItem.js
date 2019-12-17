@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const BurgerItem = (props) => {
+const BurgerItem = ({ burger, changeDisplayBurger, deleteBurger }) => {
   return (
     <div>
       <div className="BurgerItem">
-        { /* Name of Burger Here */ }
+        { burger.name }
       </div>
       <div className="BurgerBottomBun">
-        <button onClick={console.log}>Show</button>
-        <button onClick={console.log}>Delete</button>
+        <button onClick={() => changeDisplayBurger(burger) }>Show</button>
+        <button onClick={() => deleteBurger(burger)}>Delete</button>
       </div>
     </div>
   )

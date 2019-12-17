@@ -1,10 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import BurgerItem from './BurgerItem'
 
-const BurgerList = (props) => {
+const BurgerList = ({ filteredBurgers, changeDisplayBurger, deleteBurger }) => {
   return (
     <div className="BurgerList">
-      { /* Render Burger Items Here*/ }
+      { filteredBurgers.map(burger => 
+          <BurgerItem key={ burger.id } 
+                      burger={ burger } 
+                      changeDisplayBurger={ changeDisplayBurger }
+                      deleteBurger = { deleteBurger }
+          />
+        ) 
+      }
     </div>
   )
 }
